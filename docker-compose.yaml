@@ -17,3 +17,13 @@ services:
       - 'POSTGRES_PASSWORD:laravel'
       - 'POSTGRES_USER:laravel'
       - 'POSTGRES_DB:laravel'
+
+  newapp:
+    hostname: newapp
+    build: './src/newapp'
+    volumes:
+      - './src/newapp:/app'
+    ports:
+      - '3000:3000'
+    environment:
+      - 'NODE_ENV:development'
